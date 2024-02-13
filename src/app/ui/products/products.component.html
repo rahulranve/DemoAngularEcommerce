@@ -1,0 +1,25 @@
+
+
+
+
+ <div class="container">
+  <div class="row" id="productId">
+    <ng-container *ngFor="let item of productlist">
+      <div class="card col-md-3">
+        <a href=""><img src="{{ item.image }}" alt=""></a>
+        <h4 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch">
+          {{ item.title }}
+        </h4>
+        <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch">
+          {{ item.description }}
+        </p>
+        <p><strong>Price: ${{ item.price }}</strong></p>
+        <button mat-raised-button color="primary" (click)="addToCart(item)" [ngClass]="{'added': item.addedToCart}">
+          {{ item.addedToCart ? 'Added to cart' : 'Add to cart' }}
+        </button>
+        <p *ngIf="item.addedToCart" class="success-message">Added successfully!</p>
+      </div>
+    </ng-container>
+  </div>
+</div>
+   

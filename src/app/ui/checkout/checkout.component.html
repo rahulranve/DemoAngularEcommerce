@@ -1,0 +1,62 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center">Shipping Address</h1>
+            <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+                
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name:</label>
+                    <input type="text" class="form-control" id="name" formControlName="name">
+                    <div *ngIf="addressForm.get('name')?.hasError('required')" class="text-danger">
+                        Full Name is required.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address:</label>
+                    <input type="text" class="form-control" id="address" formControlName="address">
+                    <div *ngIf="addressForm.get('address')?.hasError('required')" class="text-danger">
+                        Address is required.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="city" class="form-label">City:</label>
+                    <input type="text" class="form-control" id="city" formControlName="city">
+                    <div *ngIf="addressForm.get('city')?.hasError('required')" class="text-danger">
+                        City is required.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="number" class="form-label">Phone:</label>
+                    <input type="text" class="form-control" id="number" formControlName="number">
+                    <div *ngIf="addressForm.get('number')?.hasError('required')" class="text-danger">
+                        Phone Number is required.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="state" class="form-label">State:</label>
+                    <input type="text" class="form-control" id="state" formControlName="state">
+                    <div *ngIf="addressForm.get('state')?.hasError('required')" class="text-danger">
+                        State is required.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="zip" class="form-label">ZIP Code:</label>
+                    <input type="text" class="form-control" id="zip" formControlName="zip">
+                    <div *ngIf="addressForm.get('zip')?.hasError('required')" class="text-danger">
+                        ZIP Code is required.
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" [disabled]="addressForm.invalid">Submit</button>
+            </form>
+            <div class="alert alert-success mt-3" role="alert" *ngIf="orderPlaced">
+                Order placed successfully!
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .example-icon {
+    position: relative;
+  }
+  
+  
+  .favorite-icon div {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    font-size: 5px;
+  }
+  
